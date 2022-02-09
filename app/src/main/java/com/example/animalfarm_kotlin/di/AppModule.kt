@@ -2,7 +2,6 @@ package com.example.animalfarm_kotlin.di
 
 import com.example.animalfarm_kotlin.network.AnimalsApi
 import com.example.animalfarm_kotlin.network.AnimalsApi.Companion.BASE_URL
-import com.example.animalfarm_kotlin.network.AnimalsRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,10 +22,5 @@ object AppModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(AnimalsApi::class.java)
-
-    @Provides
-    @Singleton
-    fun provideAnimalsRepository(animalsApi: AnimalsApi): AnimalsRepository =
-        AnimalsRepository(animalsApi)
 
 }

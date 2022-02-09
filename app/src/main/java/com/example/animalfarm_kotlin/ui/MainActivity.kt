@@ -3,11 +3,9 @@ package com.example.animalfarm_kotlin.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.fragment.app.activityViewModels
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.animalfarm_kotlin.R
+import com.example.animalfarm_kotlin.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

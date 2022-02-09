@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.animalfarm_kotlin.ui.home.HomeFragment"
+        android:name="com.example.animalfarm_kotlin.ui.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -16,7 +16,38 @@
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
-        android:name="com.example.animalfarm_kotlin.ui.GameFragment"
+        android:name="com.example.animalfarm_kotlin.ui.game.GameFragment"
         android:label="fragment_game"
-        tools:layout="@layout/fragment_game" />
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_lostFragment"
+            app:destination="@id/lostFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_wonFragment"
+            app:destination="@id/wonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lostFragment"
+        android:name="com.example.animalfarm_kotlin.ui.game.LostFragment"
+        android:label="fragment_lost"
+        tools:layout="@layout/fragment_lost" >
+        <action
+            android:id="@+id/action_lostFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_lostFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wonFragment"
+        android:name="com.example.animalfarm_kotlin.ui.game.WonFragment"
+        android:label="fragment_won"
+        tools:layout="@layout/fragment_won" >
+        <action
+            android:id="@+id/action_wonFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_wonFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
 </navigation>

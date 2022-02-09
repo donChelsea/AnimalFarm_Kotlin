@@ -5,4 +5,11 @@
     <string name="animal_farm">Animal Farm</string>
     <string name="play">Play</string>
     <string name="fun_animal_facts">Animal Facts</string>
+    <string name="animal">Animal</string>
+    <string name="timer">10</string>
+    <string name="winner">Winner</string>
+    <string name="play_again">Play again?</string>
+    <string name="home">Home</string>
+    <string name="try_again">Try again?</string>
+    <string name="aw_man">Aw man!</string>
 </resources>

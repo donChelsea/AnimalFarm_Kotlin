@@ -1,10 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.GameFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.game.GameFragment"
+    android:orientation="horizontal"
+    android:background="@color/black"
+    android:id="@+id/constraint_layout">
 
+    <TextView
+        android:id="@+id/animal_name_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/animal"
+        android:textSize="80sp"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/kids_zone"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/timer_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/timer"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/animal_name_text"/>
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/button_one"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_two"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:background="@drawable/koala" />
+
+    <ImageView
+        android:id="@+id/button_two"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_three"
+        app:layout_constraintStart_toEndOf="@id/button_one"
+        tools:background="@drawable/koala" />
+
+    <ImageView
+        android:id="@+id/button_three"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_two"
+        tools:background="@drawable/koala" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
