@@ -16,7 +16,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
-    private val mainViewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,8 +28,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.playBtn.setOnClickListener {
-            view.findNavController().navigate(R.id.action_homeFragment_to_gameFragment)
+        binding.apply {
+            playBtn.setOnClickListener {
+                view.findNavController().navigate(R.id.action_homeFragment_to_gameFragment)
+            }
+
+            factsBtn.setOnClickListener {
+                view.findNavController().navigate(R.id.action_homeFragment_to_factsFragment)
+            }
         }
 
     }

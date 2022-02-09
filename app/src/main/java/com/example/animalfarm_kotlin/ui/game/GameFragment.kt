@@ -31,10 +31,9 @@ class GameFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentGameBinding.inflate(inflater, container, false)
-        binding.apply {
+        return binding.apply {
             imageViews = mutableListOf(buttonOne, buttonTwo, buttonThree)
-        }
-        return binding.root
+        }.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

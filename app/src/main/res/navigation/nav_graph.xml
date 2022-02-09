@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_factsFragment"
+            app:destination="@id/factsFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
@@ -50,4 +53,9 @@
             android:id="@+id/action_wonFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/factsFragment"
+        android:name="com.example.animalfarm_kotlin.ui.facts.FactsFragment"
+        android:label="fragment_facts"
+        tools:layout="@layout/fragment_facts" />
 </navigation>
