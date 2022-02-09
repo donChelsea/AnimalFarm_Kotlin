@@ -41,18 +41,19 @@ class GameViewModel : ViewModel() {
         _isGameFinished.value = false
     }
 
-    fun getRandomAnimals(animals: MutableList<Animal>): List<Animal> {
+    fun getRandomAnimals(animals: MutableList<Animal>): MutableList<Animal> {
         val newList = mutableListOf<Animal>()
-        for (i in 0..2) {
+        repeat(3) {
             val randomIndex = rand.nextInt(animals.size)
             newList.add(animals[randomIndex])
-            newList.removeAt(randomIndex)
+            animals.removeAt(randomIndex)
         }
         return newList
     }
 
     fun getRandomColor(context: Context): Int {
-        val colorArray: TypedArray = getApplication(context).resources.obtainTypedArray(R.array.rainbow)
+        val colorArray: TypedArray =
+            getApplication(context).resources.obtainTypedArray(R.array.rainbow)
         val rainbow = IntArray(colorArray.length())
         for (i in 0 until colorArray.length()) {
             rainbow[i] = colorArray.getColor(i, 0)

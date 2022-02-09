@@ -57,15 +57,16 @@ class GameFragment : Fragment() {
     }
 
     private fun loadGameImages(animals: List<Animal>) {
-        val randomIndex = random.nextInt(animals.size)
+        val randomAnimals = gameViewModel.getRandomAnimals(animals.toMutableList())
+        val randomIndex = random.nextInt(randomAnimals.size)
         binding.constraintLayout.setBackgroundColor(gameViewModel.getRandomColor(requireActivity().applicationContext))
-        val winner = animals[randomIndex]
+        val winner = randomAnimals[randomIndex]
         binding.animalNameText.text = winner.name
         for (i in imageViews.indices) {
-            Picasso.get().load(animals[i].image).into(imageViews[i])
-            if (animals[i] === winner) {
+            Picasso.get().load(randomAnimals[i].image).into(imageViews[i])
+            if (randomAnimals[i] === winner) {
                 imageViews[i].setOnClickListener {
-                    correctGuess(animals)
+                    correctGuess(randomAnimals)
                     gameViewModel.correctPicks++
                     if (gameViewModel.correctPicks == 3) {
                         gameWon()
