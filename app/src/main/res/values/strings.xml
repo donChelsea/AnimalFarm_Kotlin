@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AnimalFarm_Kotlin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="animal_farm">Animal Farm</string>
+    <string name="play">Play</string>
+    <string name="fun_animal_facts">Animal Facts</string>
 </resources>
